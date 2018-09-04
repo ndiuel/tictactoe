@@ -1,0 +1,7 @@
+node_modules
+Include 
+Lib
+Scripts
+pyvenv
+pip-self-check
+__pycache__ 
