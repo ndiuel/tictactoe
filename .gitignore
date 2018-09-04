@@ -2,6 +2,8 @@ node_modules
 Include 
 Lib
 Scripts
-pyvenv
-pip-self-check
+pyvenv.cfg
+pip-self-check.json
 __pycache__ 
+.gitignore
+
