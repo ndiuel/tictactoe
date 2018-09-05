@@ -1,0 +1,113 @@
+@mixin btn-group($color: red, $amount: 3, $width: 95%,$height: 30px,$radius: 6px,$border-style: solid,$border-width: 1px,$active-text: #fff,$active:false){
+	@include no-padding;
+	@include flex;
+	@include border-box;
+	height: $height;
+	width: $width;
+	&-btn{
+		@include divide-width(#{$amount});
+		@include divide-height(#{1});
+		@include flex-center;
+		@include pointer;
+		@include inherit-background;
+		@include border-box;
+		@include capitalise;
+		color: $color;
+		&:hover,&:active{
+			color: $active-text;
+			background: $color;
+			outline: none;
+		}
+		@if $active{
+			&-active{
+				color: $active-text;
+				background: $color;
+				outline: none;		
+			}
+		}
+		@for $i from 1 through $amount{
+			&:nth-child(#{$i}){
+				border-top: $border-width $border-style $color;
+				border-bottom: $border-width $border-style $color;
+				border-right: $border-width $border-style $color;
+				@if $i == $amount{
+					border-top-right-radius: $radius;
+					border-bottom-right-radius: $radius;
+				}
+				@if $i == 1{
+					border-left: $border-width $border-style $color;
+					border-top-left-radius: $radius;
+					border-bottom-left-radius: $radius;
+				}
+			}
+		}
+	}
+}
+
+@mixin hide{
+	.hide{
+		display: none
+	}
+}
+
+@mixin capitalise{
+	text-transform: capitalize;
+}
+
+@mixin center-text{
+	text-align: center;
+}
+
+@mixin border-box{
+	box-sizing: border-box;
+}
+
+@mixin flex($row: true,$wrap: true){
+	display: flex;
+	@if $row{
+		flex-direction: row;
+	}
+	@else {
+		flex-direction: column;
+	}
+	@if $wrap{
+		flex-wrap: wrap;
+	}
+	@else{
+		flex-wrap: nowrap;
+	}
+}
+
+@mixin flex-center($row: true){
+	@include flex($row);
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin divide-width($amount: 2){
+	width: calc(100% / #{$amount});
+}
+
+@mixin pointer{
+	cursor: pointer;
+}
+
+@mixin inherit-background{
+	background: inherit;
+}
+
+@mixin divide-height($amount: 3){
+	height: calc(100% / #{$amount});
+}
+
+@mixin absolute-center{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);	
+}
+
+@mixin no-padding{
+	margin: 0;
+	padding: 0;
+}

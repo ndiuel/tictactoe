@@ -1,0 +1,29 @@
+@import "variables";
+@import "mixins";
+
+.board{
+	border: hidden;
+	border-collapse: collapse;
+	background: inherit;
+	width: $board-width;
+	height: $board-height;
+	@include absolute-center;
+}
+
+.cell{
+	border: 1px solid $cell-color;
+	width: calc(100% / 3);
+	height: calc(100% / 3);
+	color: $cell-color;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.won{
+	color: $won-color;
+}
+
+.empty{
+	background-color: $empty-color;
+	opacity: $empty-opacity;
+}

@@ -4,9 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --mode production",
+    "dev:server": "webpack-dev-server --hot --mode development --open",
+    "dev:build": "webpack --mode development",
+    "dev:watch": "webpack --mode development --watch"
   },
-  "keywords": [],
+  "keywords": [
+    "tictactoe",
+    "X and O",
+    "Naughts And Crosses"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -14,21 +21,27 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
     "redux": "^4.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "autoprefixer": "^9.1.5",
     "babel-loader": "^8.0.2",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
     "css-loader": "^1.0.0",
     "file-loader": "^2.0.0",
+    "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
-    "less-loader": "^4.1.0",
     "mini-css-extract-plugin": "^0.4.2",
     "node-sass": "^4.9.3",
+    "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
+    "webpack": "file:webpack",
+    "webpack-cli": "file:webpack-cli",
     "webpack-dev-server": "^3.1.7"
   }
 }
