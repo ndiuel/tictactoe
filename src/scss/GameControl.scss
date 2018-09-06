@@ -1,0 +1,6 @@
+@import "variables";
+@import "mixins";
+
+.control{
+    @include btn-group($color: $main-color,$amount: 3);
+}

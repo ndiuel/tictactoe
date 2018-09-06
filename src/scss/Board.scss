@@ -7,7 +7,6 @@
 	background: inherit;
 	width: $board-width;
 	height: $board-height;
-	@include absolute-center;
 }
 
 .cell{
@@ -17,13 +16,25 @@
 	color: $cell-color;
 	text-align: center;
 	box-sizing: border-box;
+	font-size: larger;
+	font-weight: bold;
 }
 
 .won{
 	color: $won-color;
+	animation: blink 500ms linear infinite;
 }
 
 .empty{
 	background-color: $empty-color;
 	opacity: $empty-opacity;
+}
+
+@keyframes blink{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
 }

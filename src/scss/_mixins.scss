@@ -12,7 +12,11 @@
 		@include inherit-background;
 		@include border-box;
 		@include capitalise;
+		@include no-padding;
+		font-size: large;
+		font-weight: bold;
 		color: $color;
+		outline: none;
 		&:hover,&:active{
 			color: $active-text;
 			background: $color;

@@ -1,0 +1,27 @@
+@import "variables";
+@import "mixins";
+
+#app{
+    width: $app-width;
+    height: $app-height;
+    @include absolute-center;
+    @include no-padding;
+    @include flex-center($row: false);
+    overflow: hidden;
+    @media (max-width: $app-width){
+        width: 100%;
+    }
+}
+body{
+    @include no-padding;
+}
+*{
+    font-family: $my-font-family;
+}
+
+.title{
+    @include capitalise;
+    color: $main-color;
+    position: relative;
+    top: -30px;
+}

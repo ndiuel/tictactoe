@@ -1,6 +1,6 @@
 import React from "react"
 import {EMPTY_SPACE} from "../tictactoe.js"
-import style from "../scss/Button.scss"
+import style from "../scss/Board.scss"
 
 export const Cell = ({cell,onClick}) => {
     let className = cell.value != " " ? "" : "empty"

@@ -56,6 +56,10 @@ module.exports = (env,options) => {
                     test: /\.(js|jsx)$/,
                     exclude: /node_modules/,
                     use: ["babel-loader"],
+                },
+                {
+                    test: /\.(otf|ttf)$/,
+                    use: ["file-loader"],
                 }
             ]
         }

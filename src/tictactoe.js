@@ -86,14 +86,14 @@ export const createGame = ({minname,maxname,maxvalue = DEFAULT_MAX,minvalue = DE
 				value: maxvalue,
 				max: true,
 				me: maxIsme,
-				ai: maxIsAi
+				ai: maxIsAi,
 			}),
 			min: createPlayer({
 				name: minname ? minname : maxIsAi || minIsAi ? COMPUTER : MIN_PLAYER,
 				value: minvalue,
 				max: false,
 				me: minIsme,
-				ai: minIsAi
+				ai: minIsAi,
 			})
 		},
 		current: {

@@ -1,0 +1,6 @@
+@import "variables";
+@import "mixins";
+
+.tab{
+    @include btn-group($color: $main-color,$amount: 3,$active:true);
+}
