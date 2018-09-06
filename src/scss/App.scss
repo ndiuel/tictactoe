@@ -1,27 +1,35 @@
 @import "variables";
 @import "mixins";
-
 #app{
+    @include absolute-center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
     width: $app-width;
     height: $app-height;
-    @include absolute-center;
-    @include no-padding;
-    @include flex-center($row: false);
-    overflow: hidden;
-    @media (max-width: $app-width){
+    align-items: center;
+    justify-content: space-around;
+    @media screen and (max-width: $app-width){
         width: 100%;
     }
-}
-body{
-    @include no-padding;
-}
-*{
-    font-family: $my-font-family;
+    @media screen and (max-height: $app-height){
+        height: 100%;
+    }
 }
 
+*{
+    font-family: $my-font-family;
+    @include no-padding;
+}
 .title{
-    @include capitalise;
+    text-transform: capitalize;
     color: $main-color;
-    position: relative;
-    top: -30px;
+}
+
+.easy{
+    display: flex;
+    width: 60%;
+    height: $button-height - 5px;
+    @include btn-group();
 }

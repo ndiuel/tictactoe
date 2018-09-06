@@ -4,25 +4,24 @@
 .board{
 	border: hidden;
 	border-collapse: collapse;
-	background: inherit;
 	width: $board-width;
 	height: $board-height;
 }
 
 .cell{
-	border: 1px solid $cell-color;
 	width: calc(100% / 3);
 	height: calc(100% / 3);
+	border: 1px solid $cell-color;
 	color: $cell-color;
 	text-align: center;
 	box-sizing: border-box;
 	font-size: larger;
 	font-weight: bold;
+	cursor: pointer;
 }
-
 .won{
 	color: $won-color;
-	animation: blink 500ms linear infinite;
+	animation: blink 200ms linear infinite;
 }
 
 .empty{

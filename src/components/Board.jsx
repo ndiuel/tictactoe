@@ -22,7 +22,7 @@ export const Board = ({board,cellClick}) => {
                 />
             )
         }
-        rows.push(<tr key = {i} >{cells}</tr>)
+        rows.push(<tr key = {i}>{cells}</tr>)
     }
     return (
         <table className = "board">

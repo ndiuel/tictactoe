@@ -2,12 +2,11 @@
 @import "mixins";
 
 .score{
-    @include flex;
+    display: flex;
     justify-content: space-around;
     align-items: center;
     color: $main-color;
     font-size: larger;
-    font-weight: bold;
     text-align: center;
     width: 95%;
 }

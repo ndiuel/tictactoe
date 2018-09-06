@@ -36,7 +36,11 @@ checkwin(board.cells,"X")
 const Game = () => (
 	<React.Fragment>
 	<h2 className = "title">tic tac toe </h2>
-	<TabControl tabs = {["SINGLE","MULTI","ONLINE"]} currentTab = "MULTI"/>
+	<TabControl tabs = {["SINGLE","MULTI"]} currentTab = "MULTI"/>
+	<div className="easy">
+		<div className="easy-btn">Easy</div>
+		<div className="easy-btn">Hard</div>
+	</div>
 	<Message message = "My Turn"/>
 	<Board 
 	board = {board}

@@ -2,5 +2,8 @@
 @import "mixins";
 
 .control{
-    @include btn-group($color: $main-color,$amount: 3);
+	width: $button-width;
+	height: $button-height;
+	display: flex;
+	@include btn-group();
 }
