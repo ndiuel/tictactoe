@@ -14,6 +14,9 @@
 }
 @mixin btn-group($active: false){
 	&-btn{
+		flex: 1;
+		height: 100%;
+		font-size: large;
 		@include btn($active: $active);
 		&:first-child{
 			border-top-left-radius: $button-radius;
@@ -26,10 +29,6 @@
 	}
 }
 @mixin btn($active: false){
-	flex: 1;
-	height: 100%;
-	font-size: 15px;
-	text-transform: capitalize;
 	outline: none;
 	background: inherit;
 	color: $main-color;
@@ -37,6 +36,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
+	font-weight: bold;
 	&:active{
 		@include active-color;
 	}

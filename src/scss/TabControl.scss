@@ -1,9 +1,12 @@
 @import "variables";
 @import "mixins";
 
-.tab{
-	display: flex;
-    width: $button-width;
+.tab-control{
+	@include btn-group($active: true);
+	width: $button-width;
     height: $button-height;
-    @include btn-group($active: true);
+	display: flex;
+	& *{
+		text-transform: uppercase;
+	}
 }

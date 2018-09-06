@@ -1,8 +1,8 @@
-$main-color: green;
+$main-color: #396;
 $background-color: #fff;
 $won-color: $main-color;
 $cell-color: $main-color;
-$empty-opacity: 0.1;
+$empty-opacity: 0.2;
 $empty-color: $main-color;
 $button-radius: 6px;
 $button-height: 30px;
@@ -15,6 +15,6 @@ $app-height: 700px;
 
 @font-face{
     src: url("../fonts/first-quicksand.otf");
-    font-family: "quicksand"
+    font-family: "quicksand";
 }
 

@@ -3,7 +3,7 @@
 #app{
     @include absolute-center;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     width: $app-width;
@@ -21,15 +21,4 @@
 *{
     font-family: $my-font-family;
     @include no-padding;
-}
-.title{
-    text-transform: capitalize;
-    color: $main-color;
-}
-
-.easy{
-    display: flex;
-    width: 60%;
-    height: $button-height - 5px;
-    @include btn-group();
 }

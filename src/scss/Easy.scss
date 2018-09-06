@@ -1,0 +1,9 @@
+@import "variables";
+@import "mixins";
+
+.easy{
+    display: flex;
+    width: 60%;
+    height: $button-height - 5px;
+    @include btn-group();
+}
