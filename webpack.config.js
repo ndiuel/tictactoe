@@ -11,7 +11,7 @@ module.exports = (env,options) => {
         },
         plugins: [
             new MiniCssExtractPlugin({
-                filename: "[name].[chunkhash].css",
+                filename: "[name].css",
                 chunkFilename: "[id].css"
             }),
             new HtmlWebPackPlugin({
@@ -23,7 +23,7 @@ module.exports = (env,options) => {
             })
         ],
         output: {
-            filename: devMode ? "bundle.js" : "bundle.[chunkhash].js",
+            filename: devMode ? "bundle.js" : "bundle.js",
         },
         module: {
             rules: [

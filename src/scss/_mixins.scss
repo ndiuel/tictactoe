@@ -16,7 +16,6 @@
 	&-btn{
 		flex: 1;
 		height: 100%;
-		font-size: large;
 		@include btn($active: $active);
 		&:first-child{
 			border-top-left-radius: $button-radius;

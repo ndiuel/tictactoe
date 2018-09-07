@@ -11,17 +11,12 @@ import {SINGLE,MULTI,HOME,tabs} from "../constants.js"
 import style from "../scss/Tab.scss"
 
 let board = createBoard({})
-move(board,0,"X")
-move(board,1,"X")
-move(board,2,"X")
-move(board,3,"O")
-checkwin(board.cells,"X")
 export const Tab = ({currentTab}) => {
 	let component
-	if (currentTab == "HOME"){
+	if (currentTab == HOME){
 		component = <Home tabs = {tabs}/>
 	}
-	else if (currentTab == "MULTI"){
+	else if (currentTab == MULTI){
 		component = <MULTITAB/>
 	}
 	else{
@@ -36,7 +31,7 @@ export const Tab = ({currentTab}) => {
 
 export const SINGLETAB = () => (
 	<React.Fragment>
-	<TabControl tabs = {tabs} currentTab = {MULTI}/>
+	<TabControl tabs = {tabs} currentTab = {SINGLE}/>
 	<GameTab/>
 	</React.Fragment>	
 )
