@@ -9,26 +9,18 @@ export const MOVE = "move"
 export const RESTART = "restart"
 export const RESET = "reset"
 export const UNDO = "undo"
+export const tabs = [SINGLE,MULTI]
 export const initialState = {
 	tabs: tabs,
 	[SINGLE] : {
 		easy: false,
-		currentId: null,
-		games: {},
-		currentGame(){
-			return this.games[this.currentId]
-		},
+		game: null
 	},
 	[MULTI] : {
-		easy: false,
-		currentId: null,
-		games: {},
-		currentGame(){
-			return this.games[this.currentId]
-		},
+		easy: false;
+		game: null
 	},
 	current: HOME,
-	HOME: {},
 	currentTab(){
 		return this[this.current]
 	}

@@ -132,7 +132,7 @@ export const checkwin = (cells,value) => {
     }
     return false
 }
-export const choice = (arr) => arr[Math.floor(Math.random() * arr.length )]
+export const choice = arr => arr[Math.floor(Math.random() * arr.length )]
 
 export const restart = game => game.board = createBoard({maxvalue:game.players.max.value,minvalue:game.players.min.value})
 

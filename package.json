@@ -1,8 +1,5 @@
 {
-  "ava": {
-    "babel": "inherit"
-  },
-  "name": "reacts",
+  "name": "TicTacToe",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,8 +7,7 @@
     "build": "webpack --mode production",
     "dev:server": "webpack-dev-server --hot --mode development --open",
     "dev:build": "webpack --mode development",
-    "dev:watch": "webpack --mode development --watch",
-    "test": "ava"
+    "dev:watch": "webpack --mode development --watch"
   },
   "keywords": [],
   "author": "",
@@ -21,9 +17,7 @@
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@babel/register": "^7.0.0",
     "autoprefixer": "^9.1.5",
-    "ava": "^0.25.0",
     "babel-loader": "^8.0.2",
     "css-loader": "^1.0.0",
     "file-loader": "^2.0.0",

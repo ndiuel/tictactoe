@@ -8,36 +8,20 @@ export const handleAction = (dispatch,action) =>{
 		return action
 	}
 }
-export const createAction = type => ({dispatch,tab,id}) => {
-	let action = {
-		type: type,
-		tab: tab,
-		id: id
+export const createAction = type => props => {
+	let action = {type:type}
+	let dispatch = props.dispatch
+	delete props.dispatch
+	for (let prop in props){
+		action[prop] = props[prop]
 	}
 	return handleAction(dispatch,action)
 }
 
 export const createGame = createAction(CREATE)
 export const changeTab = createAction(CHANGETAB)
+export const changeAi = createAction(CHANGEAI)
 export const restart = createAction(RESTART)
 export const reset = createAction(RESET)
 export const undo = createAction(UNDO)
-
-export const move = ({dispatch,tab,id,move,value}) => {
-	let action = {
-		type: MOVE,
-		tab: tab,
-		id: id,
-		move: move,
-		value: value,
-	}
-	return handleAction(dispatch,action)
-}
-
-export const cre = type => props => {
-	let action = {type:type}
-	for (let prop in props){
-		action[prop] = props[prop]
-	}
-	return handleAction(props.dispatch,action)
-}
+export const move = createAction(MOVE)

@@ -1,20 +1,20 @@
 import React from "react"
-import {Board} from "./Board.jsx"
-import {Home} from "./Home.jsx"
-import {Score} from "./Score.jsx"
-import {GameControl} from "./GameControl.jsx"
-import {Easy} from "./Easy.jsx"
-import {Message} from "./Message.jsx"
-import {TabControl} from "./TabControl.jsx"
+import {connect} from "react-redux"
+import {Board,BoardContainer} from "./Board.jsx"
+import {Home,HomeContainer} from "./Home.jsx"
+import {Score,ScoreContainer} from "./Score.jsx"
+import {GameControl,GameControlContainer} from "./GameControl.jsx"
+import {Easy,EasyContainer} from "./Easy.jsx"
+import {Message, MessageContainer} from "./Message.jsx"
+import {TabControl,TabControlContainer} from "./TabControl.jsx"
 import {createBoard,move,checkwin} from "../tictactoe.js"
 import {SINGLE,MULTI,HOME,tabs} from "../constants.js"
 import style from "../scss/Tab.scss"
 
-let board = createBoard({})
 export const Tab = ({currentTab}) => {
 	let component
 	if (currentTab == HOME){
-		component = <Home tabs = {tabs}/>
+		component = <HomeContainer/>
 	}
 	else if (currentTab == MULTI){
 		component = <MULTITAB/>
@@ -29,16 +29,24 @@ export const Tab = ({currentTab}) => {
 	)
 }
 
+const mapStateToProps = state => (
+	{
+		currentTab: state.current
+	}
+)
+
+export const TabContainer = connect(mapStateToProps)(Tab)
+
 export const SINGLETAB = () => (
 	<React.Fragment>
-	<TabControl tabs = {tabs} currentTab = {SINGLE}/>
+	<TabControlContainer/>
 	<GameTab/>
 	</React.Fragment>	
 )
 
 export const MULTITAB = () => (
 	<React.Fragment>
-	<TabControl tabs = {tabs} currentTab = {MULTI}/>
+	<TabControlContainer/>
 	<Easy/>
 	<GameTab/>
 	</React.Fragment>
@@ -46,9 +54,9 @@ export const MULTITAB = () => (
 
 export const GameTab = () => (
 	<React.Fragment>
-	<Message message = "My Turn"/>
-	<Board board = {board} cellClick = {(i) => console.log(i)}/>
-	<Score maxName = "Samuel" maxScore = {0} minName = "Aniekan" minScore = {0} />
-	<GameControl/>	
+	<MessageContainer/>
+	<BoardContainer/>
+	<ScoreContainer/>
+	<GameControlContainer/>	
 	</React.Fragment>
 )

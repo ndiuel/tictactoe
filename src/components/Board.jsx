@@ -1,12 +1,19 @@
 import React from "react"
+import {connect} from "react-redux"
 import {EMPTY_SPACE} from "../tictactoe.js"
+import {move} from "../actions.js"
+import {MULTI} from "../constants.js"
 import style from "../scss/Board.scss"
 
 export const Cell = ({cell,onClick}) => {
     let className = cell.value != " " ? "" : "empty"
     let textClass = cell.won ? "won" : " "
     return (
-      <td className = {`cell ${className}`} onClick = {onClick}><p className = {textClass}> {cell.value} </p></td>
+      <td className = {`cell ${className}`} 
+      onClick = {onClick}>
+      <p className = {textClass}> 
+      {cell.value} </p>
+      </td>
     )
 }
 export const Board = ({board,cellClick}) => {
@@ -22,7 +29,7 @@ export const Board = ({board,cellClick}) => {
                 />
             )
         }
-        rows.push(<tr key = {i}>{cells}</tr>)
+        rows.push(<tr key = {i} >{cells}</tr>)
     }
     return (
         <table className = "board">
@@ -34,3 +41,33 @@ export const Board = ({board,cellClick}) => {
         </table>
     )
 }
+
+const mapStateToProps = state => (
+    {
+        tab: state.current,
+        game: state.currentTab().game
+    }
+)
+
+const mapDispatchToProps = dispatch => (
+    {
+        dispatch: dispatch
+    }
+
+)
+const mergeProps = (stateProps,dispatchProps) => (
+    {
+        cellClick: index => move({
+            dispatch: dispatch,
+            index: index,
+            tab: stateProps.tab,
+            value: tab ==  MULTI ? stateProps.game.currentPlayer().value : game.players.max.value
+        }),
+        board: {
+            game: stateProps.game.board
+        }
+    }
+)
+
+export const BoardContainer = connect(mapStateToProps,mapDispatchToProps,mergeProps)(Board)
+
