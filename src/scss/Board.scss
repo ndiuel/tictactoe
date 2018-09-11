@@ -6,8 +6,10 @@
 	border-collapse: collapse;
 	width: $board-width;
 	height: $board-height;
-	min-height: 250px;
-
+	min-height: $board-height;
+	@media screen and (min-height: 600px){
+		height: 50%;
+	}
 }
 
 .cell{

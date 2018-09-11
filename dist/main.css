@@ -6,14 +6,17 @@
   border: hidden;
   border-collapse: collapse;
   width: 80%;
-  height: 50%;
+  height: 250px;
   min-height: 250px; }
+  @media screen and (min-height: 600px) {
+    .board {
+      height: 50%; } }
 
 .cell {
   width: calc(100% / 3);
   height: calc(100% / 3);
-  border: 1px solid red;
-  color: red;
+  border: 1px solid #396;
+  color: #396;
   text-align: center;
   box-sizing: border-box;
   font-size: larger;
@@ -21,12 +24,12 @@
   cursor: pointer; }
 
 .won {
-  color: green;
+  color: red;
   -webkit-animation: blink 200ms linear infinite;
   animation: blink 200ms linear infinite; }
 
 .empty {
-  background-color: red;
+  background-color: #396;
   opacity: 0.2; }
 
 @-webkit-keyframes blink {
@@ -48,13 +51,14 @@
 .menu {
   outline: none;
   background: inherit;
-  color: red;
-  border: 1px solid red;
+  color: #396;
+  border: 1px solid #396;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   font-weight: bold;
+  font-size: large;
   width: 95%;
   height: 35px;
   border-radius: 6px;
@@ -63,11 +67,11 @@
   font-size: larger;
   border-width: 1px; }
   .menu:active {
-    background: red;
+    background: #396;
     color: #fff; }
   @media screen and (min-width: 600px) {
     .menu:hover {
-      background: red;
+      background: #396;
       color: #fff; } }
 
 .home {
@@ -85,7 +89,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color: red;
+  color: #396;
   font-size: larger;
   text-align: center;
   width: 95%; }
@@ -103,19 +107,20 @@
     height: 100%;
     outline: none;
     background: inherit;
-    color: red;
-    border: 1px solid red;
+    color: #396;
+    border: 1px solid #396;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-weight: bold; }
+    font-weight: bold;
+    font-size: large; }
     .control-btn:active {
-      background: red;
+      background: #396;
       color: #fff; }
     @media screen and (min-width: 600px) {
       .control-btn:hover {
-        background: red;
+        background: #396;
         color: #fff; } }
     .control-btn:first-child {
       border-top-left-radius: 6px;
@@ -137,22 +142,23 @@
     height: 100%;
     outline: none;
     background: inherit;
-    color: red;
-    border: 1px solid red;
+    color: #396;
+    border: 1px solid #396;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-weight: bold; }
+    font-weight: bold;
+    font-size: large; }
     .easy-btn:active {
-      background: red;
+      background: #396;
       color: #fff; }
     .easy-btn-active {
-      background: red;
+      background: #396;
       color: #fff; }
     @media screen and (min-width: 600px) {
       .easy-btn:hover {
-        background: red;
+        background: #396;
         color: #fff; } }
     .easy-btn:first-child {
       border-top-left-radius: 6px;
@@ -166,7 +172,7 @@
   font-family: "quicksand"; }
 
 .message {
-  color: red;
+  color: #396;
   text-align: center;
   font-size: larger; }
 
@@ -183,22 +189,23 @@
     height: 100%;
     outline: none;
     background: inherit;
-    color: red;
-    border: 1px solid red;
+    color: #396;
+    border: 1px solid #396;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-weight: bold; }
+    font-weight: bold;
+    font-size: large; }
     .tab-control-btn:active {
-      background: red;
+      background: #396;
       color: #fff; }
     .tab-control-btn-active {
-      background: red;
+      background: #396;
       color: #fff; }
     @media screen and (min-width: 600px) {
       .tab-control-btn:hover {
-        background: red;
+        background: #396;
         color: #fff; } }
     .tab-control-btn:first-child {
       border-top-left-radius: 6px;
@@ -223,7 +230,7 @@
 
 .title {
   text-transform: capitalize;
-  color: red; }
+  color: #396; }
 
 @font-face {
   src: url(3ce1580b66db6742cecd4b41519fb5f1.otf);
@@ -239,16 +246,16 @@
   align-items: center;
   flex-direction: column;
   width: 400px;
-  height: 650px;
-  min-height: 450px;
-  align-items: center;
-  justify-content: space-around; }
+  height: 650px; }
   @media screen and (max-width: 400px) {
     #app {
       width: 100%; } }
   @media screen and (max-height: 650px) {
     #app {
       height: 100vh; } }
+  @media screen and (max-height: 400px) {
+    #app {
+      height: 500px; } }
 
 * {
   font-family: "quicksand";

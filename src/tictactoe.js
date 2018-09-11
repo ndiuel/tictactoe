@@ -52,7 +52,6 @@ export const createBoard = ({maxvalue = DEFAULT_MAX,minvalue = DEFAULT_MIN}) => 
 					arr.push(i)
 				}
 			}
-			shuffle(arr)
 			return arr
 		},
 	}
@@ -194,7 +193,9 @@ export const undo = board => {
 	if (board.history.length > 0){
 		let prev = board.history.pop()
 		board.cells[prev].value = EMPTY_SPACE
-		board.cells[prev].won = false
+		for (let cell of board.freespaces()){
+			board.cells[cell].won = false
+		}
 		return true
 	}
 	return false
@@ -206,6 +207,7 @@ export const minimax = ({board,max = true,alpha = -10, beta = 10}) => {
         return [board.score(),null]
     }
     let spaces = board.freespaces()
+    shuffle(spaces)
     let value = max ? -10 : 10
     let bestMove = -1
     for (let space of spaces){
