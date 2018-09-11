@@ -1,6 +1,6 @@
 import React from "react"
 import {connect} from "react-redux"
-import {changeTab} from "../tictactoe.js"
+import {changeTab} from "../actions.js"
 import style from "../scss/TabControl.scss"
 
 export const TabControl = ({tabs,changeTab,currentTab}) => (
@@ -26,8 +26,8 @@ const mapDispatchToProps = dispatch => (
     {
         changeTab: tab => changeTab({
             dispatch:dispatch,
-            tab:tab}
-        )
+            tab:tab
+        })
     }
 )
 

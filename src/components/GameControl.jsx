@@ -13,7 +13,7 @@ export const GameControl = ({onRestart,onReset,onUndo}) => (
 
 const mapStateToProps = state => (
     {
-        tab: state.tab
+        tab: state.current
     }
 )
 const mapDispatchToProps = dispatch => (
@@ -24,16 +24,16 @@ const mapDispatchToProps = dispatch => (
 
 const mergeProps = (stateProps,dispatchProps)  => (
     {
-        onReset: () => restart({
-            dispatch: dispatch,
+        onReset: () => reset({
+            dispatch: dispatchProps.dispatch,
             tab: stateProps.tab
         }),
-        onRestart: () => reset({
-            dispatch: dispatch,
+        onRestart: () => restart({
+            dispatch: dispatchProps.dispatch,
             tab: stateProps.tab
         }),
         onUndo: () => undo({
-            dispatch: dispatch,
+            dispatch: dispatchProps.dispatch,
             tab: stateProps.tab
         })
     }

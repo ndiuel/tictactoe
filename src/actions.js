@@ -1,4 +1,4 @@
-import {CREATE,CHANGETAB,MOVE,RESTART,RESET,UNDO,CHANGEAI} from "./constants.js"
+import {CHANGETAB,MOVE,RESTART,RESET,UNDO,CHANGEAI} from "./constants.js"
 
 export const handleAction = (dispatch,action) =>{
 	if (dispatch){
@@ -18,7 +18,6 @@ export const createAction = type => props => {
 	return handleAction(dispatch,action)
 }
 
-export const createGame = createAction(CREATE)
 export const changeTab = createAction(CHANGETAB)
 export const changeAi = createAction(CHANGEAI)
 export const restart = createAction(RESTART)

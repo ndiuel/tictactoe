@@ -30,7 +30,7 @@ const mapStateToProps = state => (
 	}
 )
 
-const mapDisPatchToProps = dispatch = (
+const mapDisPatchToProps = dispatch => (
 	{
 		changeTab: tab => changeTab({
 			dispatch: dispatch,

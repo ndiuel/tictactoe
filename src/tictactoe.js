@@ -52,6 +52,7 @@ export const createBoard = ({maxvalue = DEFAULT_MAX,minvalue = DEFAULT_MIN}) => 
 					arr.push(i)
 				}
 			}
+			shuffle(arr)
 			return arr
 		},
 	}
@@ -134,23 +135,17 @@ export const checkwin = (cells,value) => {
 }
 export const choice = arr => arr[Math.floor(Math.random() * arr.length )]
 
+export const shuffle = arr => {
+	for (let i = arr.length - 1; i > 1; --i){
+		let j = Math.round(Math.random() * i)
+		let prev = arr[j]
+		arr[j] = arr[i]
+		arr[i] = prev
+	}
+}
+
 export const restart = game => game.board = createBoard({maxvalue:game.players.max.value,minvalue:game.players.min.value})
 
-export const range = (start,stop,step) => {
-	if (start == undefined || start == null){
-		return false
-	}
-	if (stop == undefined || stop == null){
-		stop = start
-		start = 0
-	}
-	step = step ? step : 1
-	let arr = []
-	for (let i = start; i < stop; i+=step){
-		arr.push(i)
-	}
-	return arr
-}
 export const reset = game => {
 	restart(game)
 	game.players.max.score = 0

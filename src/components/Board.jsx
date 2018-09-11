@@ -58,14 +58,12 @@ const mapDispatchToProps = dispatch => (
 const mergeProps = (stateProps,dispatchProps) => (
     {
         cellClick: index => move({
-            dispatch: dispatch,
+            dispatch:dispatchProps. dispatch,
             index: index,
             tab: stateProps.tab,
-            value: tab ==  MULTI ? stateProps.game.currentPlayer().value : game.players.max.value
+            value: stateProps.tab ==  MULTI ? stateProps.game.currentPlayer().value : stateProps.game.players.max.value
         }),
-        board: {
-            game: stateProps.game.board
-        }
+        board: stateProps.game.board
     }
 )
 

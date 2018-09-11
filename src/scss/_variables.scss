@@ -1,6 +1,6 @@
 $main-color: #396;
 $background-color: #fff;
-$won-color: $main-color;
+$won-color: red;
 $cell-color: $main-color;
 $empty-opacity: 0.2;
 $empty-color: $main-color;
@@ -11,7 +11,7 @@ $board-height: 50%;
 $board-width: 80%;
 $my-font-family: "quicksand";
 $app-width: 400px;
-$app-height: 700px;
+$app-height: 650px;
 
 @font-face{
     src: url("../fonts/first-quicksand.otf");

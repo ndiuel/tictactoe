@@ -5,5 +5,5 @@
     display: flex;
     width: 60%;
     height: $button-height - 5px;
-    @include btn-group();
+    @include btn-group($active: true);
 }

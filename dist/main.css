@@ -6,13 +6,14 @@
   border: hidden;
   border-collapse: collapse;
   width: 80%;
-  height: 50%; }
+  height: 50%;
+  min-height: 250px; }
 
 .cell {
   width: calc(100% / 3);
   height: calc(100% / 3);
-  border: 1px solid #396;
-  color: #396;
+  border: 1px solid red;
+  color: red;
   text-align: center;
   box-sizing: border-box;
   font-size: larger;
@@ -20,12 +21,12 @@
   cursor: pointer; }
 
 .won {
-  color: #396;
+  color: green;
   -webkit-animation: blink 200ms linear infinite;
   animation: blink 200ms linear infinite; }
 
 .empty {
-  background-color: #396;
+  background-color: red;
   opacity: 0.2; }
 
 @-webkit-keyframes blink {
@@ -47,8 +48,8 @@
 .menu {
   outline: none;
   background: inherit;
-  color: #396;
-  border: 1px solid #396;
+  color: red;
+  border: 1px solid red;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,11 +63,11 @@
   font-size: larger;
   border-width: 1px; }
   .menu:active {
-    background: #396;
+    background: red;
     color: #fff; }
   @media screen and (min-width: 600px) {
     .menu:hover {
-      background: #396;
+      background: red;
       color: #fff; } }
 
 .home {
@@ -84,7 +85,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color: #396;
+  color: red;
   font-size: larger;
   text-align: center;
   width: 95%; }
@@ -102,19 +103,19 @@
     height: 100%;
     outline: none;
     background: inherit;
-    color: #396;
-    border: 1px solid #396;
+    color: red;
+    border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-weight: bold; }
     .control-btn:active {
-      background: #396;
+      background: red;
       color: #fff; }
     @media screen and (min-width: 600px) {
       .control-btn:hover {
-        background: #396;
+        background: red;
         color: #fff; } }
     .control-btn:first-child {
       border-top-left-radius: 6px;
@@ -136,19 +137,22 @@
     height: 100%;
     outline: none;
     background: inherit;
-    color: #396;
-    border: 1px solid #396;
+    color: red;
+    border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-weight: bold; }
     .easy-btn:active {
-      background: #396;
+      background: red;
+      color: #fff; }
+    .easy-btn-active {
+      background: red;
       color: #fff; }
     @media screen and (min-width: 600px) {
       .easy-btn:hover {
-        background: #396;
+        background: red;
         color: #fff; } }
     .easy-btn:first-child {
       border-top-left-radius: 6px;
@@ -162,7 +166,7 @@
   font-family: "quicksand"; }
 
 .message {
-  color: #396;
+  color: red;
   text-align: center;
   font-size: larger; }
 
@@ -179,22 +183,22 @@
     height: 100%;
     outline: none;
     background: inherit;
-    color: #396;
-    border: 1px solid #396;
+    color: red;
+    border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-weight: bold; }
     .tab-control-btn:active {
-      background: #396;
+      background: red;
       color: #fff; }
     .tab-control-btn-active {
-      background: #396;
+      background: red;
       color: #fff; }
     @media screen and (min-width: 600px) {
       .tab-control-btn:hover {
-        background: #396;
+        background: red;
         color: #fff; } }
     .tab-control-btn:first-child {
       border-top-left-radius: 6px;
@@ -219,7 +223,7 @@
 
 .title {
   text-transform: capitalize;
-  color: #396; }
+  color: red; }
 
 @font-face {
   src: url(3ce1580b66db6742cecd4b41519fb5f1.otf);
@@ -235,15 +239,16 @@
   align-items: center;
   flex-direction: column;
   width: 400px;
-  height: 700px;
+  height: 650px;
+  min-height: 450px;
   align-items: center;
   justify-content: space-around; }
   @media screen and (max-width: 400px) {
     #app {
       width: 100%; } }
-  @media screen and (max-height: 700px) {
+  @media screen and (max-height: 650px) {
     #app {
-      height: 100%; } }
+      height: 100vh; } }
 
 * {
   font-family: "quicksand";

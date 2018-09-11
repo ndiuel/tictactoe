@@ -1,28 +1,25 @@
-import {CREATE,CHANGETAB,CHANGEAI,MOVE,RESTART} from "./constants.js" 
+import {CHANGETAB,CHANGEAI,MOVE,RESTART} from "./constants.js" 
 import {RESET,UNDO,SINGLE,MULTI,HOME,initialState} from "./constants.js"
-import {createGame,restart,reset,undo,moveOnGame} from "./tictactoe.js"
+import {createGame,restart,reset,undo,moveOnGame,toggle} from "./tictactoe.js"
 import clone from "clone"
 
 const reducer = (state = initialState,action) => {
-	let state = clone(state)
+	state = clone(state)
 	let type = action.type
 	let _tab,tab
-	if (type == CREATE){
-		_tab = action.tab == SINGLE || action.tab == MULTI ? action.tab : MULTI
-		tab = state[_tab]
-		tab.game = createGame({minIsAi: _tab == SINGLE})
-	}
-	else if (type == CHANGETAB){
+	if (type == CHANGETAB){
 		_tab = action.tab
 		tab = state[_tab]
-		if (!tab.game && _tab == HOME){
-			tab.game = createGame({minIsAi: tab == SINGLE})
+		let prev = state.current
+		state.current = _tab
+		if (!tab.game){
+			tab.game = createGame({minIsAi: _tab == SINGLE})
 		}
 	}
 	else if (type == CHANGEAI){
-		tab = state[MULTI]
-		if (tab.game){
-			tab.easy = action.easy || tab.easy
+		tab = state[SINGLE]
+		if (tab.game && (tab.game.board.isEmpty() || tab.game.board.isTerminalState())){
+			tab.easy = action.easy === true || action.easy === false ? action.easy : tab.easy 
 		}
 	}
 	else if (type == MOVE){
@@ -49,8 +46,9 @@ const reducer = (state = initialState,action) => {
 	else if (type == UNDO){
 		_tab = action.tab == SINGLE || action.tab == MULTI ? action.tab : MULTI
 		tab = state[_tab]
-		if (tab.game){
+		if (tab.game && !tab.game.board.isTerminalState()){
 			undo(tab.game.board)
+			toggle(tab.game)
 		}
 	}
 	return state

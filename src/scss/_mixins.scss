@@ -37,6 +37,7 @@
 	align-items: center;
 	text-align: center;
 	font-weight: bold;
+	font-size: large;
 	&:active{
 		@include active-color;
 	}

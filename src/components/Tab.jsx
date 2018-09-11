@@ -37,17 +37,17 @@ const mapStateToProps = state => (
 
 export const TabContainer = connect(mapStateToProps)(Tab)
 
-export const SINGLETAB = () => (
+export const MULTITAB = () => (
 	<React.Fragment>
 	<TabControlContainer/>
 	<GameTab/>
 	</React.Fragment>	
 )
 
-export const MULTITAB = () => (
+export const SINGLETAB = () => (
 	<React.Fragment>
 	<TabControlContainer/>
-	<Easy/>
+	<EasyContainer/>
 	<GameTab/>
 	</React.Fragment>
 )
